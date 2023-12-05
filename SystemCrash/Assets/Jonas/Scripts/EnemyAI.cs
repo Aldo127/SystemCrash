@@ -21,6 +21,7 @@ public class EnemyAI : MonoBehaviour
     Rigidbody rb;
 
     private int health;
+    private int age = 0;
 
 
     private void Start()
@@ -35,6 +36,8 @@ public class EnemyAI : MonoBehaviour
     }
     void FixedUpdate()
     {
+        if (orientation.transform.position.y <= -200) Destroy(gameObject);
+        age += 1;
         GetDestination(enemySettings.movementType);
         MoveCreature();
         SpeedLimit();
@@ -73,6 +76,16 @@ public class EnemyAI : MonoBehaviour
 
             orientation.transform.LookAt(destination + target.transform.position);
             orientation.transform.eulerAngles = new Vector3(0, orientation.transform.eulerAngles.y);
+        }
+        else if (MovementType == "flyCircle")
+        {
+            float a = 6;
+            float b = 4;
+            float c = 6;
+            Vector3 destination = new Vector3(
+                (a + b) * Mathf.Cos(age) - c * Mathf.Cos((a / b + age) * age), 8,
+                (a + b) * Mathf.Sin(age) - c * Mathf.Sin((a / b + age) * age));
+            orientation.transform.LookAt(destination + target.transform.position);
         }
         else
         {

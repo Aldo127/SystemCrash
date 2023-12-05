@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a37abad1cd5d804db47d09994d268d9, type: 3}
-  m_Name: Virus
+  m_Name: Hack
   m_EditorClassIdentifier: 
-  movementType: spiral
-  maxHealth: 20
+  movementType: flyCircle
+  maxHealth: 2
