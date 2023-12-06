@@ -70,7 +70,7 @@ public class EnemyAI : MonoBehaviour
         {
             Vector3 distanceVector = gameObject.transform.position - target.transform.position;
             float distanceFromPoint = distanceVector.sqrMagnitude / 15;
-            Debug.Log(distanceFromPoint);
+            //Debug.Log(distanceFromPoint);
             Vector3 destination = new Vector3(1f * (Mathf.Cos(distanceFromPoint) + distanceFromPoint * Mathf.Sin(distanceFromPoint)), 0,
                 1f * (Mathf.Sin(distanceFromPoint) - distanceFromPoint * Mathf.Cos(distanceFromPoint)));
 
@@ -79,7 +79,7 @@ public class EnemyAI : MonoBehaviour
         }
         else if (MovementType == "flyCircle")
         {
-            float a = 6;
+            float a = 8;
             float b = 4;
             float c = 6;
             Vector3 destination = new Vector3(
@@ -87,7 +87,7 @@ public class EnemyAI : MonoBehaviour
                 (a + b) * Mathf.Sin(age) - c * Mathf.Sin((a / b + age) * age));
             orientation.transform.LookAt(destination + target.transform.position);
         }
-        else
+        else if (MovementType == "forward")
         {
             orientation.transform.LookAt(target.transform);
             orientation.transform.eulerAngles = new Vector3(0, orientation.transform.eulerAngles.y);
@@ -96,6 +96,9 @@ public class EnemyAI : MonoBehaviour
     public void Damage(int amount)
     {
         health -= amount;
+        if (gameObject.GetComponent<ParticleSystem>()) gameObject.GetComponent<ParticleSystem>().Play();
+        Debug.Log("Hit!");
+        //gameObject.GetComponent<ParticleSystem>()?.Play();
         if (health <= 0) Destroy(gameObject);
     }
 }
