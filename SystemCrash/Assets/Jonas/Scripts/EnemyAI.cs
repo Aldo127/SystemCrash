@@ -87,7 +87,7 @@ public class EnemyAI : MonoBehaviour
                 (a + b) * Mathf.Sin(age) - c * Mathf.Sin((a / b + age) * age));
             orientation.transform.LookAt(destination + target.transform.position);
         }
-        else
+        else if (MovementType == "forward")
         {
             orientation.transform.LookAt(target.transform);
             orientation.transform.eulerAngles = new Vector3(0, orientation.transform.eulerAngles.y);
