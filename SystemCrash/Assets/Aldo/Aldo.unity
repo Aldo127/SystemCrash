@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 215663}
   - component: {fileID: 215662}
   - component: {fileID: 215661}
+  - component: {fileID: 215664}
   m_Layer: 0
   m_Name: PlayerObj
   m_TagString: Player
@@ -221,6 +222,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 215659}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &215664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c2ab795742bd6a469496530dae6842b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  attack: 26
+  character: {fileID: 12332789}
+  fireVFX: {fileID: 1599718021928974, guid: 21461e6c060baf044ac3e717ed4170cb, type: 3}
+  XPdrop: {fileID: 0}
+  transform: {fileID: 0}
 --- !u!1 &12332789
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,7 +251,6 @@ GameObject:
   - component: {fileID: 12332790}
   - component: {fileID: 12332791}
   - component: {fileID: 12332792}
-  - component: {fileID: 12332793}
   - component: {fileID: 12332794}
   m_Layer: 0
   m_Name: Player
@@ -299,21 +317,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   orientation: {fileID: 2123838882}
---- !u!114 &12332793
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 12332789}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c2ab795742bd6a469496530dae6842b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
-  attack: 10
-  character: {fileID: 2125104981}
 --- !u!114 &12332794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -326,7 +329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40951bb4106088c4897e86cafe709ae2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playeratm: {fileID: 12332793}
+  playeratm: {fileID: 215664}
   enemyAtm: {fileID: 2125104982}
   enemyIsClose: 0
 --- !u!1 &105280862
@@ -766,7 +769,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &644115181
 Transform:
   m_ObjectHideFlags: 0
@@ -1165,13 +1168,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1186849691}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.0032144904, y: 0.016116941, z: 0.0058708317, w: 0.99984777}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 8.173056, y: 8.173056, z: 8.173056}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.357, y: 1.849, z: 0.679}
 --- !u!1 &1216180805
 GameObject:
   m_ObjectHideFlags: 3
@@ -1710,6 +1713,9 @@ MonoBehaviour:
   health: 100
   attack: 5
   character: {fileID: 2125104981}
+  fireVFX: {fileID: 1494083766182838, guid: 151b49b11ab5924429acc76ead6435fa, type: 3}
+  XPdrop: {fileID: 6094127258648343203, guid: befe5f54930d9ac48b4f2eb640a156aa, type: 3}
+  transform: {fileID: 2125104986}
 --- !u!136 &2125104983
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1781,7 +1787,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2125104981}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.58649, y: 0.67367554, z: 2.053138}
+  m_LocalPosition: {x: 0.83, y: 0.95, z: -3.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
