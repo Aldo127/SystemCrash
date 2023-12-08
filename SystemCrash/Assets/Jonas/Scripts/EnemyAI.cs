@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
-    public float moveSpeed;
+    private float moveSpeed;
     public float airMultiplier;
     public EnemyType enemySettings;
     private GameObject target;
@@ -30,6 +30,7 @@ public class EnemyAI : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
         health = enemySettings.maxHealth;
+        moveSpeed = enemySettings.speed;
     }
     private void Update()
     {
@@ -39,11 +40,12 @@ public class EnemyAI : MonoBehaviour
     {
         if (orientation.transform.position.y <= -200) Death();
         age += 1;
+        if (age == enemySettings.lifetime) Death();
         attackCooldown -= 1;
         GetDestination(enemySettings.movementType);
         MoveCreature();
         SpeedLimit();
-        if(attackCooldown <= 0) Attack();
+        if(attackCooldown <= 0) Attack(enemySettings.attackType);
     }
     private void MoveCreature()
     {
@@ -63,7 +65,8 @@ public class EnemyAI : MonoBehaviour
         if (flatVelocity.magnitude > moveSpeed)
         {
             Vector3 limitedVelocity = flatVelocity.normalized * moveSpeed;
-            rb.velocity = new Vector3(limitedVelocity.x, rb.velocity.y, limitedVelocity.z);
+            if (rb.useGravity == false) rb.velocity = new Vector3(limitedVelocity.x, limitedVelocity.y, limitedVelocity.z);
+            else rb.velocity = new Vector3(limitedVelocity.x, rb.velocity.y, limitedVelocity.z);
         }
     }
     private void GetDestination(string MovementType)
@@ -82,7 +85,7 @@ public class EnemyAI : MonoBehaviour
         }
         else if (MovementType == "flyCircle")
         {
-            float a = 8;
+            float a = 10;
             float b = 4;
             float c = 6;
             Vector3 destination = new Vector3(
@@ -96,6 +99,7 @@ public class EnemyAI : MonoBehaviour
             orientation.transform.eulerAngles = new Vector3(0, orientation.transform.eulerAngles.y);
         }
     }
+
     public void Damage(int amount)
     {
         health -= amount;
@@ -103,6 +107,7 @@ public class EnemyAI : MonoBehaviour
         
         if (health <= 0) Death();
     }
+
     public void Death()
     {
         for (int i = 0; i < enemySettings.bitValue; i++)
@@ -114,15 +119,36 @@ public class EnemyAI : MonoBehaviour
         }
         Destroy(gameObject);
     }
-    public void Attack()
+
+    public void Attack(string AttackType)
     {
         Vector3 distanceVector = gameObject.transform.position - target.transform.position;
         float distanceFromPoint = distanceVector.sqrMagnitude;
-        if (distanceFromPoint <= 2)
+        if (AttackType == "ranged")
         {
-            attackCooldown = 10;
-            target.GetComponent<PlayerStats>().Damage(enemySettings.damage);
+            GameObject newProjectile = Instantiate(enemySettings.projectilePrefab, transform.position, transform.rotation);
+            newProjectile.GetComponent<EnemyAI>().orientation.transform.LookAt(target.transform);
+            newProjectile.SetActive(true);
+            attackCooldown = enemySettings.attackCooldown;
         }
+        else if (AttackType == "break")
+        {
+            if (distanceFromPoint <= 2)
+            {
+                attackCooldown = enemySettings.attackCooldown;
+                target.GetComponent<PlayerStats>().Damage(enemySettings.damage);
+                Damage(enemySettings.damage);
+            }
+        }
+        else
+        {
+            if (distanceFromPoint <= 2)
+            {
+                attackCooldown = enemySettings.attackCooldown;
+                target.GetComponent<PlayerStats>().Damage(enemySettings.damage);
+            }
+        }
+        
         
 
     }

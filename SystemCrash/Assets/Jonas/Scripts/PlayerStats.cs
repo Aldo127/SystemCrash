@@ -8,6 +8,8 @@ public class PlayerStats : MonoBehaviour
     public int points = 0;
     public int health;
     public GameObject gameOverScreen;
+    public GameObject pointCounter;
+    public GameObject healthCounter;
     public GameSettings gameSettings;
     
     // Start is called before the first frame update
@@ -20,6 +22,7 @@ public class PlayerStats : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        //healthCounter.GetComponent<TextEditor>().text = "Health: " + health;
         if (health > maxHealth) health -= 1;
         if (gameSettings.playerAlive == true)
         {

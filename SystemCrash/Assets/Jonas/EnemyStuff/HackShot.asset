@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a37abad1cd5d804db47d09994d268d9, type: 3}
-  m_Name: Hack
+  m_Name: HackShot
   m_EditorClassIdentifier: 
-  movementType: flyCircle
-  maxHealth: 2
-  bitValue: 10
-  damage: 10
-  speed: 6
-  attackType: ranged
-  projectilePrefab: {fileID: 7965688671166624015, guid: 48685b0acaec4bd43adef5f3c221e585, type: 3}
-  attackCooldown: 120
-  lifetime: -1
+  movementType: straight
+  maxHealth: 1
+  bitValue: 0
+  damage: 20
+  speed: 10
+  attackType: break
+  projectilePrefab: {fileID: 0}
+  attackCooldown: 10
+  lifetime: 200
