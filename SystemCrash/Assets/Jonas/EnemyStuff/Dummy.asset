@@ -15,3 +15,8 @@ MonoBehaviour:
   movementType: dummy
   maxHealth: 2000
   bitValue: 1
+  damage: 10
+  speed: 0
+  attackType: melee
+  projectilePrefab: {fileID: 0}
+  attackCooldown: 10
