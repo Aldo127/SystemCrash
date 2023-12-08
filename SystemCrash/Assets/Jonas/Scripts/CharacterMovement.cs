@@ -54,6 +54,7 @@ public class CharacterMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (orientation.transform.position.y <= -200) gameObject.GetComponent<PlayerStats>().GameOver();
         MovePlayer();
     }
 

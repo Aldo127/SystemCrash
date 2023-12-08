@@ -22,7 +22,8 @@ public class EnemyAI : MonoBehaviour
 
     private int health;
     private int age = 0;
-
+    private int attackCooldown = 0;
+    [SerializeField] private GameSettings gameSettings;
 
     private void Start()
     {
@@ -36,11 +37,13 @@ public class EnemyAI : MonoBehaviour
     }
     void FixedUpdate()
     {
-        if (orientation.transform.position.y <= -200) Destroy(gameObject);
+        if (orientation.transform.position.y <= -200) Death();
         age += 1;
+        attackCooldown -= 1;
         GetDestination(enemySettings.movementType);
         MoveCreature();
         SpeedLimit();
+        if(attackCooldown <= 0) Attack();
     }
     private void MoveCreature()
     {
@@ -97,8 +100,30 @@ public class EnemyAI : MonoBehaviour
     {
         health -= amount;
         if (gameObject.GetComponent<ParticleSystem>()) gameObject.GetComponent<ParticleSystem>().Play();
-        Debug.Log("Hit!");
-        //gameObject.GetComponent<ParticleSystem>()?.Play();
-        if (health <= 0) Destroy(gameObject);
+        
+        if (health <= 0) Death();
+    }
+    public void Death()
+    {
+        for (int i = 0; i < enemySettings.bitValue; i++)
+        {
+            GameObject newBit = Instantiate(gameSettings.bitPrefab, transform.position, Random.rotation);
+            //newBit.transform.rotation = Random.rotation;
+            newBit.SetActive(true);
+            newBit.GetComponent<Rigidbody>().AddForce(newBit.transform.forward * 280f, ForceMode.Force);
+        }
+        Destroy(gameObject);
+    }
+    public void Attack()
+    {
+        Vector3 distanceVector = gameObject.transform.position - target.transform.position;
+        float distanceFromPoint = distanceVector.sqrMagnitude;
+        if (distanceFromPoint <= 2)
+        {
+            attackCooldown = 10;
+            target.GetComponent<PlayerStats>().Damage(enemySettings.damage);
+        }
+        
+
     }
 }

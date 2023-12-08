@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 908437342214558176}
   - component: {fileID: 908437342214558191}
   - component: {fileID: 908437342214558190}
+  - component: {fileID: 9189140521068285362}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -48,9 +49,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AI: {fileID: 0}
-  moveSpeed: 7
+  moveSpeed: 8
   groundDrag: 5
-  jumpForce: 12
+  jumpForce: 10
   jumpCooldown: 0.25
   airMultiplier: 0.4
   jumpKey: 32
@@ -75,6 +76,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &9189140521068285362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 908437342214558177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ceadfbbda48f804585f25bd819d5e85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 50
+  points: 0
+  health: 0
+  gameOverScreen: {fileID: 0}
+  gameSettings: {fileID: 11400000, guid: cb57e58fd966eb04b9b682478092bf3d, type: 2}
 --- !u!1 &908437342727375370
 GameObject:
   m_ObjectHideFlags: 0

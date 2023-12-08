@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementType: spiral
   maxHealth: 20
+  bitValue: 15
+  damage: 20

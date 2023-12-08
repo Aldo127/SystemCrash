@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: Bug
   m_EditorClassIdentifier: 
   movementType: forward
+  maxHealth: 5
+  bitValue: 3

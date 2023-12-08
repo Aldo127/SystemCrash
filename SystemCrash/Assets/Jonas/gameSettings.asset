@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a37abad1cd5d804db47d09994d268d9, type: 3}
-  m_Name: Dummy
+  m_Script: {fileID: 11500000, guid: a50b638c02662a74ea4c66564a3233ca, type: 3}
+  m_Name: gameSettings
   m_EditorClassIdentifier: 
-  movementType: dummy
-  maxHealth: 2000
-  bitValue: 1
+  bitPrefab: {fileID: 5570520671071246356, guid: 8a47c37da73a9a945a5590fabd98f93b, type: 3}
+  playerAlive: 1
