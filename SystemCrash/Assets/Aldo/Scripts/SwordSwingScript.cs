@@ -25,7 +25,39 @@ public class SwordSwingScript : MonoBehaviour
     IEnumerator SwordSwing()
     {
         Sword.GetComponent<Animator>().Play("SwordSwing1");
-        yield return new WaitForSeconds(0.5f);
-        Sword.GetComponent<Animator>().Play("New State");
+        yield return new WaitForEndOfFrame();
+       
+        yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
+
+        Sword.GetComponent<Animator>().Play("SwordSwing2");
+        yield return new WaitForEndOfFrame();
+
+        yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
+
+        Sword.GetComponent<Animator>().Play("SwordSwing1");
+        yield return new WaitForEndOfFrame();
+
+        yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
+
+        Sword.GetComponent<Animator>().Play("SwordSwing2");
+        yield return new WaitForEndOfFrame();
+
+        yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
+
+        Sword.GetComponent<Animator>().Play("SwordSwing3");
+        yield return new WaitForEndOfFrame();
+
+        yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
+
+        Sword.GetComponent<Animator>().Play("SwordSwing1");
+
+        yield return new WaitForEndOfFrame();
+
+        yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
+
+        Sword.GetComponent<Animator>().Play("SwordSwing2");
+
+        yield break;
+       
     }
 }
