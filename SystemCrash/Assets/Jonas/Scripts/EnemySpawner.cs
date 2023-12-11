@@ -5,8 +5,9 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public List<GameObject> enemies;
-    private int cooldown;
+    private int cooldown = -120;
     private GameObject player;
+    public GameSettings gameSettings;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +18,7 @@ public class EnemySpawner : MonoBehaviour
     void FixedUpdate()
     {
         cooldown += 1;
-        if (cooldown >= 60)
+        if (cooldown >= 60 && gameSettings.playerAlive == true)
         {
             transform.position = new Vector3(Random.Range(-39, 39), 1.5f, Random.Range(-39, 39));
             Vector3 distanceVector = gameObject.transform.position - player.transform.position;

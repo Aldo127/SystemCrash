@@ -16134,8 +16134,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 874bec3bd9d04c64b9b72b83d67c2d84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensitivityX: 3000
-  sensitivityY: 3000
+  sensitivityX: 2600
+  sensitivityY: 2600
   orientation: {fileID: 561312323}
 --- !u!114 &1796952139
 MonoBehaviour:
@@ -16184,6 +16184,8 @@ MonoBehaviour:
   - {fileID: 582216721}
   - {fileID: 7575364994909372371}
   - {fileID: 1159350244}
+  - {fileID: 582216721}
+  gameSettings: {fileID: 11400000, guid: cb57e58fd966eb04b9b682478092bf3d, type: 2}
 --- !u!4 &1989821458
 Transform:
   m_ObjectHideFlags: 0

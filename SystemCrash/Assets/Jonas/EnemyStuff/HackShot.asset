@@ -15,7 +15,7 @@ MonoBehaviour:
   movementType: straight
   maxHealth: 1
   bitValue: 0
-  damage: 20
+  damage: 15
   speed: 10
   attackType: break
   projectilePrefab: {fileID: 0}
