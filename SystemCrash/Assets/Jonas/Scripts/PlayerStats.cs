@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -22,7 +23,8 @@ public class PlayerStats : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        //healthCounter.GetComponent<TextEditor>().text = "Health: " + health;
+        healthCounter.GetComponent<Text>().text = "Health: " + health;
+        pointCounter.GetComponent<Text>().text = "Score: " + points;
         if (health > maxHealth) health -= 1;
         if (gameSettings.playerAlive == true)
         {

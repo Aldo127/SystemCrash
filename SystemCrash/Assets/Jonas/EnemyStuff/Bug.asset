@@ -14,9 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementType: forward
   maxHealth: 5
-  bitValue: 3
-  damage: 10
+  bitValue: 6
+  damage: 8
   speed: 6
   attackType: melee
   projectilePrefab: {fileID: 0}
-  attackCooldown: 10
+  attackCooldown: 15
+  lifetime: -1
