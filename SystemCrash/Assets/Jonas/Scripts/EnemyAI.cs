@@ -152,4 +152,14 @@ public class EnemyAI : MonoBehaviour
         
 
     }
+    void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.name == "Bug" && attackCooldown <= 0)
+        {
+            
+            collision.gameObject.GetComponentInParent<EnemyAI>().orientation.transform.LookAt(target.transform);
+            collision.gameObject.GetComponentInParent<Rigidbody>().AddForce(collision.gameObject.transform.forward * 250f, ForceMode.Force);
+            attackCooldown = enemySettings.attackCooldown;
+        }
+    }
 }

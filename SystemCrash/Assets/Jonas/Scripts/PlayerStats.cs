@@ -37,9 +37,12 @@ public class PlayerStats : MonoBehaviour
         {
             health -= amount;
             if (amount > 0 && health <= 0) GameOver();
-            else if (amount > 0) {
+            else if (amount > 0) 
+            {
                 gameOverScreen.SetActive(true);
-                Debug.Log("Hit!"); }
+                Debug.Log("Hit!");
+                if (gameObject.GetComponent<ParticleSystem>()) gameObject.GetComponent<ParticleSystem>().Play();
+            }
         }
     }
     public void GameOver()
