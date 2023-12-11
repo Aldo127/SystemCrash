@@ -67,7 +67,8 @@ public class HealthManager : MonoBehaviour
     {
         Vector3 position = transform.position; //position of enemy
         GameObject XP = Instantiate(XPdrop, position, Quaternion.identity);
-
+        XP.SetActive(true);
+        Destroy(XP, 5f);
     }
     //IEnumerator Death()
     //{
