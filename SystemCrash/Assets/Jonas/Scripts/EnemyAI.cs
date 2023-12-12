@@ -13,6 +13,7 @@ public class EnemyAI : MonoBehaviour
     public float playerHeight;
     public LayerMask ground;
     bool isGrounded;
+    public bool wasThrown = false;
 
     public Transform orientation;
 
@@ -22,7 +23,7 @@ public class EnemyAI : MonoBehaviour
 
     private int health;
     private int age = 0;
-    private int attackCooldown = 0;
+    private int attackCooldown;
     [SerializeField] private GameSettings gameSettings;
 
     private void Start()
@@ -30,7 +31,8 @@ public class EnemyAI : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
         health = enemySettings.maxHealth;
-        moveSpeed = enemySettings.speed;
+        moveSpeed = enemySettings.speed * gameSettings.enemySpeedMultiplier;
+        attackCooldown = enemySettings.attackCooldown;
     }
     private void Update()
     {
@@ -41,32 +43,47 @@ public class EnemyAI : MonoBehaviour
         if (orientation.transform.position.y <= -200) Death();
         age += 1;
         if (age == enemySettings.lifetime) Death();
-        attackCooldown -= 1;
-        GetDestination(enemySettings.movementType);
-        MoveCreature();
-        SpeedLimit();
-        if(attackCooldown <= 0) Attack(enemySettings.attackType);
+        
+        if (wasThrown == true)
+        {
+            rb.useGravity = true;
+            attackCooldown = enemySettings.attackCooldown;
+            Vector3 flatVelocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+            if (flatVelocity.magnitude < moveSpeed) wasThrown = false;
+        }
+        else
+        {
+            rb.useGravity = enemySettings.usesGravity;
+            attackCooldown -= 1;
+            GetDestination(enemySettings.movementType);
+            MoveCreature();
+            SpeedLimit();
+            if (attackCooldown <= 0) Attack(enemySettings.attackType);
+        }
+        
     }
     private void MoveCreature()
     {
         moveDirection = orientation.forward;
 
+        rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
         //move
-        if (isGrounded) rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
+        //if (isGrounded) rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
         //air move
-        else if (!isGrounded) rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
+        //else if (!isGrounded) rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
     }
 
     private void SpeedLimit()//Limits speed
     {
-        Vector3 flatVelocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+        Vector3 flatVelocity = new Vector3(rb.velocity.x, rb.velocity.y, rb.velocity.z);
 
         //limits speed
         if (flatVelocity.magnitude > moveSpeed)
         {
             Vector3 limitedVelocity = flatVelocity.normalized * moveSpeed;
-            if (rb.useGravity == false) rb.velocity = new Vector3(limitedVelocity.x, limitedVelocity.y, limitedVelocity.z);
-            else rb.velocity = new Vector3(limitedVelocity.x, rb.velocity.y, limitedVelocity.z);
+            rb.velocity = new Vector3(limitedVelocity.x, limitedVelocity.y, limitedVelocity.z);
+            //if (rb.useGravity == false) rb.velocity = new Vector3(limitedVelocity.x, limitedVelocity.y, limitedVelocity.z);
+            //else rb.velocity = new Vector3(limitedVelocity.x, rb.velocity.y, limitedVelocity.z);
         }
     }
     private void GetDestination(string MovementType)
@@ -75,7 +92,7 @@ public class EnemyAI : MonoBehaviour
         if (MovementType == "spiral")
         {
             Vector3 distanceVector = gameObject.transform.position - target.transform.position;
-            float distanceFromPoint = distanceVector.sqrMagnitude / 15;
+            float distanceFromPoint = distanceVector.sqrMagnitude / 13;
             //Debug.Log(distanceFromPoint);
             Vector3 destination = new Vector3(1f * (Mathf.Cos(distanceFromPoint) + distanceFromPoint * Mathf.Sin(distanceFromPoint)), 0,
                 1f * (Mathf.Sin(distanceFromPoint) - distanceFromPoint * Mathf.Cos(distanceFromPoint)));
@@ -85,12 +102,12 @@ public class EnemyAI : MonoBehaviour
         }
         else if (MovementType == "flyCircle")
         {
-            float a = 10;
-            float b = 4;
-            float c = 6;
+            float a = 30;
+            float b = 30;
+            float c = 30;
             Vector3 destination = new Vector3(
-                (a + b) * Mathf.Cos(age) - c * Mathf.Cos((a / b + age) * age), 8,
-                (a + b) * Mathf.Sin(age) - c * Mathf.Sin((a / b + age) * age));
+                (a + b) * Mathf.Cos(age * 2) - c * Mathf.Cos((a / b + age * 2) * age * 2), 6,
+                (a + b) * Mathf.Sin(age * 2) - c * Mathf.Sin((a / b + age * 2) * age * 2));
             orientation.transform.LookAt(destination + target.transform.position);
         }
         else if (MovementType == "forward")
@@ -104,8 +121,13 @@ public class EnemyAI : MonoBehaviour
     {
         health -= amount;
         if (gameObject.GetComponent<ParticleSystem>()) gameObject.GetComponent<ParticleSystem>().Play();
-        
+
         if (health <= 0) Death();
+        else if (enemySettings.weak == true && wasThrown == false)
+        {
+            rb.AddForce(orientation.transform.forward * enemySettings.speed * -20, ForceMode.Force);
+            wasThrown = true; 
+        }
     }
 
     public void Death()
@@ -154,12 +176,22 @@ public class EnemyAI : MonoBehaviour
     }
     void OnCollisionStay(Collision collision)
     {
-        if (collision.gameObject.name == "Bug" && attackCooldown <= 0)
+        if (collision.gameObject.GetComponentInParent<EnemyAI>())
         {
+            if (enemySettings.canThrowAllies == true && attackCooldown <= 0 && collision.gameObject.GetComponentInParent<EnemyAI>().enemySettings.throwable == true)
+            {
+                //Debug.Log("Throw!!!");
+                collision.gameObject.GetComponentInParent<EnemyAI>().orientation.transform.LookAt(target.transform);
+                collision.gameObject.GetComponentInParent<Rigidbody>().AddForce(collision.gameObject.GetComponentInParent<EnemyAI>().orientation.transform.forward * 600f, ForceMode.Force);
+                collision.gameObject.GetComponentInParent<EnemyAI>().wasThrown = true;
+                attackCooldown = enemySettings.attackCooldown;
+            }
+            else
+            {
+                if (collision.gameObject.GetComponentInParent<EnemyAI>().enemySettings.weak == true) collision.gameObject.GetComponentInParent<EnemyAI>().Damage(0);
+                if (enemySettings.weak == true) Damage(0);
+            }
             
-            collision.gameObject.GetComponentInParent<EnemyAI>().orientation.transform.LookAt(target.transform);
-            collision.gameObject.GetComponentInParent<Rigidbody>().AddForce(collision.gameObject.transform.forward * 250f, ForceMode.Force);
-            attackCooldown = enemySettings.attackCooldown;
         }
     }
 }

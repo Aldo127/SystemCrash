@@ -21,3 +21,5 @@ MonoBehaviour:
   projectilePrefab: {fileID: 0}
   attackCooldown: 15
   lifetime: -1
+  throwable: 1
+  canThrowAllies: 0

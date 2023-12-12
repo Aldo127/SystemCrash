@@ -15,4 +15,8 @@ public class EnemyType : ScriptableObject
     public GameObject projectilePrefab;
     public int attackCooldown = 10;
     public int lifetime = -1;
+    public bool throwable;
+    public bool canThrowAllies;
+    public bool usesGravity = true;
+    public bool weak;
 }

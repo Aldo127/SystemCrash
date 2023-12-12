@@ -7,18 +7,23 @@ public class PlayerCamera : MonoBehaviour
     public float sensitivityY;
 
     public Transform orientation;
+    public GameObject mainCamera;
 
     float xRotation;
     float yRotation;
+
+    public GameSettings gameSettings;
 
     private void Start()
     {
         //prevent the cursor from leaving the window
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        mainCamera.transform.localPosition = new Vector3(0f, 0f, -1f * gameSettings.cameraDistanceFromPlayer);
     }
     private void Update()
     {
+        if (gameSettings.playerAlive) mainCamera.transform.eulerAngles = new Vector3(0f, 0f, 70f) ;
         //get mouse input
         float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensitivityX;
         float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensitivityY;

@@ -33,7 +33,7 @@ public class PlayerStats : MonoBehaviour
     }
     public void Damage(int amount)
     {
-        if (gameSettings.playerAlive == true)
+        if (gameSettings.playerAlive == true && gameSettings.godMode == false)
         {
             health -= amount;
             if (amount > 0 && health <= 0) GameOver();

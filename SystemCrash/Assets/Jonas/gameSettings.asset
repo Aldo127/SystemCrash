@@ -12,5 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a50b638c02662a74ea4c66564a3233ca, type: 3}
   m_Name: gameSettings
   m_EditorClassIdentifier: 
+  cameraDistanceFromPlayer: 0
+  enemySpawnDistance: 200
+  enemySpeedMultiplier: 1
+  godMode: 0
   bitPrefab: {fileID: 5570520671071246356, guid: 8a47c37da73a9a945a5590fabd98f93b, type: 3}
   playerAlive: 1

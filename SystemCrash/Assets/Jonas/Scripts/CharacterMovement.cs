@@ -31,6 +31,8 @@ public class CharacterMovement : MonoBehaviour
 
     Rigidbody rb;
 
+    public GameSettings gameSettings;
+
     private void Start()
     {
         //no more spinning
@@ -43,10 +45,8 @@ public class CharacterMovement : MonoBehaviour
     {
         //ground check
         isGrounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, ground);
-
-        MyInput();//runs the MyInput function
+        if (gameSettings.playerAlive) MyInput();//runs the MyInput function
         SpeedLimit();//runs the SpeedLimit function
-
         //friction
         if (isGrounded) rb.drag = groundDrag;
         else rb.drag = 0;
@@ -55,7 +55,7 @@ public class CharacterMovement : MonoBehaviour
     private void FixedUpdate()
     {
         if (orientation.transform.position.y <= -200) gameObject.GetComponent<PlayerStats>().GameOver();
-        MovePlayer();
+        if (gameSettings.playerAlive) MovePlayer();
     }
 
     private void MyInput()

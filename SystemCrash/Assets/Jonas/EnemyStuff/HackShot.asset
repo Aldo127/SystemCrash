@@ -20,4 +20,8 @@ MonoBehaviour:
   attackType: break
   projectilePrefab: {fileID: 0}
   attackCooldown: 10
-  lifetime: 200
+  lifetime: 180
+  throwable: 0
+  canThrowAllies: 0
+  usesGravity: 0
+  weak: 0
