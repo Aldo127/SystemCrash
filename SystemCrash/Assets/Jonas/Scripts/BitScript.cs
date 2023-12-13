@@ -16,14 +16,14 @@ public class BitScript : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (gameSettings.playerAlive == false) Destroy(gameObject);
+        if (!gameSettings.playerAlive || !gameSettings.gameIsActive) Destroy(gameObject);
 
         age += 1;
         //determine if the player is close enough
         player = GameObject.FindGameObjectWithTag("Player");
         Vector3 distanceVector = gameObject.transform.position - player.transform.position;
         float distanceFromPoint = distanceVector.sqrMagnitude;
-        if (distanceFromPoint <= 2)
+        if (distanceFromPoint <= 3)
         {
             player.GetComponent<PlayerStats>().points += 1;
             player.GetComponent<PlayerStats>().Damage(-1);

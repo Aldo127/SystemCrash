@@ -6,10 +6,11 @@ public class DebugHit : MonoBehaviour
 {
     [SerializeField] private float objectDistance;
     [SerializeField] private Collider objectCollider;
+    public GameSettings gameSettings;
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0) && gameSettings.playerAlive && gameSettings.gameIsActive)
         {
             RaycastHit hit;
             if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit))

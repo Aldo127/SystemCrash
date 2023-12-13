@@ -40,6 +40,7 @@ public class EnemyAI : MonoBehaviour
     }
     void FixedUpdate()
     {
+        if (!gameSettings.gameIsActive) Destroy(gameObject);
         if (orientation.transform.position.y <= -200) Death();
         age += 1;
         if (age == enemySettings.lifetime) Death();
