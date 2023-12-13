@@ -7,6 +7,9 @@ public class GameSettings : ScriptableObject
 {
     public float cameraDistanceFromPlayer = 10;
 
+    public int pointGoal = 300;
+    public int timeLimit = -1;
+
     public float enemySpawnDistance = 70;
 
     public float enemySpeedMultiplier = 1f;
@@ -17,5 +20,8 @@ public class GameSettings : ScriptableObject
     public GameObject bitPrefab;
 
     public bool playerAlive = true;
+
+    public bool gameIsActive = false;
+
 
 }

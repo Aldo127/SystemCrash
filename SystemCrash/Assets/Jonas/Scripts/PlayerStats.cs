@@ -29,6 +29,10 @@ public class PlayerStats : MonoBehaviour
         if (gameSettings.playerAlive == true)
         {
             gameOverScreen.SetActive(false);
+            if (gameSettings.gameIsActive && gameSettings.pointGoal > 0 && points >= gameSettings.pointGoal)
+            {
+                gameSettings.gameIsActive = false;
+            }
         }
     }
     public void Damage(int amount)
@@ -40,7 +44,7 @@ public class PlayerStats : MonoBehaviour
             else if (amount > 0) 
             {
                 gameOverScreen.SetActive(true);
-                Debug.Log("Hit!");
+                //Debug.Log("Hit!");
                 if (gameObject.GetComponent<ParticleSystem>()) gameObject.GetComponent<ParticleSystem>().Play();
             }
         }
@@ -50,6 +54,6 @@ public class PlayerStats : MonoBehaviour
         gameOverScreen.SetActive(true);
         gameSettings.playerAlive = false;
         Debug.Log("Game Over!");
-        Debug.Log("Final Score: " + points);
+        //Debug.Log("Final Score: " + points);
     }
 }

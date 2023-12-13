@@ -13,6 +13,7 @@ public class PlayerCamera : MonoBehaviour
     float yRotation;
 
     public GameSettings gameSettings;
+    private float zRotation;
 
     private void Start()
     {
@@ -23,7 +24,7 @@ public class PlayerCamera : MonoBehaviour
     }
     private void Update()
     {
-        if (gameSettings.playerAlive) mainCamera.transform.eulerAngles = new Vector3(0f, 0f, 70f) ;
+        
         //get mouse input
         float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensitivityX;
         float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensitivityY;
@@ -34,7 +35,22 @@ public class PlayerCamera : MonoBehaviour
         xRotation = Mathf.Clamp(xRotation, -90f, 90); //prevent the player from looking too far up and looking behind them
 
         //apply numbers to the camera
-        transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
-        orientation.rotation = Quaternion.Euler(0, yRotation, 0);
+        transform.rotation = Quaternion.Euler(xRotation, yRotation, zRotation);
+        orientation.rotation = Quaternion.Euler(0, yRotation, zRotation);
+    }
+    private void FixedUpdate()
+    {
+        if (gameSettings.gameIsActive &&  gameSettings.playerAlive)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+        if (!gameSettings.playerAlive) zRotation = 90f;
+        else zRotation = 0f;
     }
 }
