@@ -13,6 +13,7 @@ public class EnemySpawner : MonoBehaviour
     private int time;
     public GameObject timeCounter;
     private bool startTimer = false;
+    public int spawnRange;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,7 +40,7 @@ public class EnemySpawner : MonoBehaviour
         if (time <= 0) gameSettings.gameIsActive = false;
         if (cooldown >= 60 && gameSettings.playerAlive && gameSettings.gameIsActive)
         {
-            transform.position = new Vector3(Random.Range(-39, 39), 1.5f, Random.Range(-39, 39));
+            transform.position = new Vector3(Random.Range(-spawnRange, spawnRange), 1.5f, Random.Range(-spawnRange, spawnRange));
             Vector3 distanceVector = gameObject.transform.position - player.transform.position;
             float distanceFromPoint = distanceVector.sqrMagnitude;
             if (distanceFromPoint > gameSettings.enemySpawnDistance)

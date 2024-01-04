@@ -60,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9be4d6dac18d77643a8ff232c16cb411, type: 2}
+  - {fileID: 2100000, guid: 3175f39d140d22c4db0a66b52fb7f0af, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -198,6 +198,7 @@ MonoBehaviour:
   ground:
     serializedVersion: 2
     m_Bits: 64
+  wasThrown: 0
   orientation: {fileID: 9177771137417475421}
   gameSettings: {fileID: 11400000, guid: cb57e58fd966eb04b9b682478092bf3d, type: 2}
 --- !u!199 &96320364711742549
