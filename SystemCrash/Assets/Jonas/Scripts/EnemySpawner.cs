@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class EnemySpawner : MonoBehaviour
 {
     public List<GameObject> enemies;
-    private int cooldown = -100;
+    private int cooldown;
     private GameObject player;
     public GameSettings gameSettings;
     public GameObject reminder;
@@ -19,8 +19,15 @@ public class EnemySpawner : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         reminder.SetActive(true);
-        gameSettings.gameIsActive = true;
+        Reset();
+    }
+
+    public void Reset()
+    {
         time = gameSettings.timeLimit * 50;
+        cooldown = -100;
+        gameSettings.gameIsActive = true;
+        startTimer = false;
     }
 
     // Update is called once per frame
