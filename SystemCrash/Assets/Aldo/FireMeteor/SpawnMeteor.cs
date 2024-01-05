@@ -25,3 +25,4 @@ public class SpawnMeteor : MonoBehaviour
         obj.transform.localRotation = Quaternion.Lerp  (obj.transform.rotation, rotation, 1);
     }
 }
+  

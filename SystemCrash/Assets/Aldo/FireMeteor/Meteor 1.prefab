@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4661995736970697762}
   - component: {fileID: 3453400073684835022}
   - component: {fileID: 7464622011176618162}
-  - component: {fileID: 2247332475026400240}
+  - component: {fileID: 4793090674780370392}
   m_Layer: 0
   m_Name: Meteor 1
   m_TagString: Untagged
@@ -48,7 +48,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 50
-  impactPrefab: {fileID: 0}
+  impactPrefab: {fileID: 5083150001499041461, guid: 3fba31950b32be84ea0ead0807e6d62f, type: 3}
+  trails:
+  - {fileID: 7091079378119585797}
 --- !u!54 &7464622011176618162
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -65,7 +67,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &2247332475026400240
+--- !u!65 &4793090674780370392
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -76,8 +78,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 1.5, z: 1.5}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 2.065113, y: 1.7202549, z: 1.7213316}
+  m_Center: {x: -24.316256, y: 9.941182, z: 2.9599767}
 --- !u!1 &8671746327415908568
 GameObject:
   m_ObjectHideFlags: 0
@@ -168,5 +170,10 @@ PrefabInstance:
 --- !u!4 &1376251422684939495 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3830495500076117573, guid: eb41d531c890653478e878011250a908, type: 3}
+  m_PrefabInstance: {fileID: 2752203207840623266}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7091079378119585797 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4925065676914006695, guid: eb41d531c890653478e878011250a908, type: 3}
   m_PrefabInstance: {fileID: 2752203207840623266}
   m_PrefabAsset: {fileID: 0}
