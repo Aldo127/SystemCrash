@@ -17,7 +17,8 @@ MonoBehaviour:
   timeLimit: 180
   enemySpawnDistance: 200
   enemySpeedMultiplier: 1
-  godMode: 1
+  godMode: 0
   bitPrefab: {fileID: 5570520671071246356, guid: 8a47c37da73a9a945a5590fabd98f93b, type: 3}
-  playerAlive: 1
-  gameIsActive: 0
+  playerAlive: 0
+  gameIsActive: 1
+  gamePaused: 0

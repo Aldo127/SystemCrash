@@ -23,5 +23,9 @@ public class GameSettings : ScriptableObject
 
     public bool gameIsActive = false;
 
+    public bool gamePaused = false;
+
+    //public bool enemiesActive = false;
+
 
 }

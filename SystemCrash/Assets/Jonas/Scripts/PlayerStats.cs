@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class PlayerStats : MonoBehaviour
     public GameObject gameOverScreen;
     public GameObject pointCounter;
     public GameObject healthCounter;
+    public GameObject pointGoal;
+    public GameObject gameOverMessage;
     public GameSettings gameSettings;
     
     // Start is called before the first frame update
@@ -18,6 +21,7 @@ public class PlayerStats : MonoBehaviour
     {
         gameSettings.playerAlive = true;
         health = maxHealth;
+        gameOverMessage.SetActive(false);
     }
 
     // Update is called once per frame
@@ -25,12 +29,14 @@ public class PlayerStats : MonoBehaviour
     {
         healthCounter.GetComponent<Text>().text = "Health: " + health;
         pointCounter.GetComponent<Text>().text = "Score: " + points;
+        pointGoal.GetComponent<Text>().text = "Goal: " + gameSettings.pointGoal + " before time over!";
         if (health > maxHealth) health -= 1;
         if (gameSettings.playerAlive == true)
         {
             gameOverScreen.SetActive(false);
             if (gameSettings.gameIsActive && gameSettings.pointGoal > 0 && points >= gameSettings.pointGoal)
             {
+                SceneManager.LoadScene("WinScreen");
                 gameSettings.gameIsActive = false;
             }
         }
@@ -52,6 +58,7 @@ public class PlayerStats : MonoBehaviour
     public void GameOver()
     {
         gameOverScreen.SetActive(true);
+        gameOverMessage.SetActive(true);
         gameSettings.playerAlive = false;
         Debug.Log("Game Over!");
         //Debug.Log("Final Score: " + points);
