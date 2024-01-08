@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class EnemySpawner : MonoBehaviour
     private GameObject player;
     public GameSettings gameSettings;
     public GameObject reminder;
+    public GameObject timeOver;
     private int time;
     public GameObject timeCounter;
     private bool startTimer = false;
@@ -24,6 +26,7 @@ public class EnemySpawner : MonoBehaviour
 
     public void Reset()
     {
+        timeOver.SetActive(false);
         time = gameSettings.timeLimit * 50;
         cooldown = -100;
         gameSettings.gameIsActive = true;
@@ -34,6 +37,8 @@ public class EnemySpawner : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Mouse0)) startTimer = true;
+        if (!gameSettings.playerAlive && Input.GetKeyDown(KeyCode.Mouse0)) SceneManager.LoadScene("SceneyScene");
+        if (time <= 0 && Input.GetKeyDown(KeyCode.Mouse0)) SceneManager.LoadScene("SceneyScene");
     }
     void FixedUpdate()
     {
@@ -44,7 +49,11 @@ public class EnemySpawner : MonoBehaviour
             reminder.SetActive(false);
         }
         if (time % 50 == 0) timeCounter.GetComponent<Text>().text = "Time: " + time / 50;
-        if (time <= 0) gameSettings.gameIsActive = false;
+        if (time <= 0)
+        { 
+            gameSettings.gameIsActive = false;
+            timeOver.SetActive(true);
+        }
         if (cooldown >= 60 && gameSettings.playerAlive && gameSettings.gameIsActive)
         {
             transform.position = new Vector3(Random.Range(-spawnRange, spawnRange), 1.5f, Random.Range(-spawnRange, spawnRange));

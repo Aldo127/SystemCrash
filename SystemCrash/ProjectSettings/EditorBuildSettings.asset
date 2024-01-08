@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Jonas/Menu.unity
+    guid: 9c71524279166a84d8c4d72d5c7307a5
+  - enabled: 1
+    path: Assets/Jonas/SceneyScene.unity
+    guid: b323c410cb99b524ea1ddc88a5627166
+  - enabled: 1
+    path: Assets/Jonas/WinScreen.unity
+    guid: 41dd07da7b80ddd4c8aa6c0924415cef
   m_configObjects: {}

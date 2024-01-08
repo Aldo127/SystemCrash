@@ -9,4 +9,8 @@ public class SwitchScene : MonoBehaviour
     {
         SceneManager.LoadScene("SceneyScene");
     }
+    public void ReturnToMenu()
+    {
+        SceneManager.LoadScene("Menu");
+    }
 }
