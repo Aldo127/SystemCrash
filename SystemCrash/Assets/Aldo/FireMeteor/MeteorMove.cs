@@ -52,5 +52,7 @@ public class MeteorMove : MonoBehaviour
         }
 
         Destroy(gameObject);
+
+        //insert kill all enemy code here:
     }
 }

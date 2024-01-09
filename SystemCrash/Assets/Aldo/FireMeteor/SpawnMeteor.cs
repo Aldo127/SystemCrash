@@ -8,7 +8,7 @@ public class SpawnMeteor : MonoBehaviour
     public Transform startPoint;
     public Transform endPoint;
 
-    private void Start()
+     public void MeteorTest()
     {
         var startPos = startPoint.position;
         GameObject objVFX = Instantiate(vfx, startPos, Quaternion.identity) as GameObject;
@@ -18,7 +18,15 @@ public class SpawnMeteor : MonoBehaviour
         RotateTo(objVFX, endPos);
     }
 
-    void RotateTo(GameObject obj, Vector3 destination)
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            MeteorTest();
+        }
+    }
+
+    public void RotateTo(GameObject obj, Vector3 destination)
     {
         var direction = destination - obj.transform.position;
         var rotation = Quaternion.LookRotation(direction);
