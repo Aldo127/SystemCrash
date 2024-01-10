@@ -3,8 +3,8 @@ using UnityEngine;
 public class PlayerCamera : MonoBehaviour
 {
     //mouse sensitivity
-    public float sensitivityX;
-    public float sensitivityY;
+    //public float sensitivityX;
+    //public float sensitivityY;
 
     public Transform orientation;
     public GameObject mainCamera;
@@ -26,8 +26,8 @@ public class PlayerCamera : MonoBehaviour
     {
         
         //get mouse input
-        float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensitivityX;
-        float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensitivityY;
+        float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * gameSettings.mSensitivityX;
+        float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * gameSettings.mSensitivityY;
 
         //y is left and right, x is up and down
         yRotation += mouseX;

@@ -16,9 +16,12 @@ public class EnemySpawner : MonoBehaviour
     public GameObject timeCounter;
     private bool startTimer = false;
     public int spawnRange;
+    private int restartDelay = 10;
+    public GameObject continueMessage;
     // Start is called before the first frame update
     void Start()
     {
+        continueMessage.SetActive(false);
         player = GameObject.FindGameObjectWithTag("Player");
         reminder.SetActive(true);
         Reset();
@@ -37,11 +40,12 @@ public class EnemySpawner : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Mouse0)) startTimer = true;
-        if (!gameSettings.playerAlive && Input.GetKeyDown(KeyCode.Mouse0)) SceneManager.LoadScene("SceneyScene");
-        if (time <= 0 && Input.GetKeyDown(KeyCode.Mouse0)) SceneManager.LoadScene("SceneyScene");
+        if (restartDelay <= 0 && Input.GetKeyDown(KeyCode.Mouse0)) SceneManager.LoadScene("SceneyScene");
     }
     void FixedUpdate()
     {
+        if (!gameSettings.playerAlive || time <= 0) restartDelay -= 1;
+        if (restartDelay <= 0) continueMessage.SetActive(true);
         if (startTimer && gameSettings.playerAlive && gameSettings.gameIsActive)
         {
             cooldown += 1;

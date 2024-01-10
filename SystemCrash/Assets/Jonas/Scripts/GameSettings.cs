@@ -16,6 +16,9 @@ public class GameSettings : ScriptableObject
 
     public bool godMode = false;
 
+    public float mSensitivityX;
+    public float mSensitivityY;
+
     [Header("Do Not Touch")]
     public GameObject bitPrefab;
 
