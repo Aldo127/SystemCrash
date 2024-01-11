@@ -1,8 +1,11 @@
 fileFormatVersion: 2
-guid: 7b4841763be756040bc1d3ec2208b365
+guid: 405ef1d55eeb91843ba1b29e39d33447
 ModelImporter:
   serializedVersion: 20300
   internalIDToNameTable:
+  - first:
+      74: -3299178882980226264
+    second: Cylinder|CameraAction
   - first:
       74: -5182580781479304208
     second: Cylinder|Cube.001Action
@@ -49,11 +52,17 @@ ModelImporter:
       74: -88723805440604879
     second: Cylinder|CylinderAction
   - first:
+      74: 2131784477776736117
+    second: Cylinder|LightAction
+  - first:
       74: 5270737530955641581
     second: Cylinder|Plane.002Action
   - first:
       74: 3227894124313807145
     second: Cylinder|PlaneAction
+  - first:
+      74: -7056266762376855500
+    second: Cube.003|CameraAction
   - first:
       74: -4805450742491024743
     second: Cube.003|Cube.001Action
@@ -100,11 +109,17 @@ ModelImporter:
       74: 3229214716036803315
     second: Cube.003|CylinderAction
   - first:
+      74: -7770463821748278422
+    second: Cube.003|LightAction
+  - first:
       74: -8350598916927280058
     second: Cube.003|Plane.002Action
   - first:
       74: 4638365516470731542
     second: Cube.003|PlaneAction
+  - first:
+      74: -2464318301851289549
+    second: Cube.004|CameraAction
   - first:
       74: 194676454379394236
     second: Cube.004|Cube.001Action
@@ -151,11 +166,17 @@ ModelImporter:
       74: 628854122778465988
     second: Cube.004|CylinderAction
   - first:
+      74: 6238767970992243737
+    second: Cube.004|LightAction
+  - first:
       74: 3943576593709101530
     second: Cube.004|Plane.002Action
   - first:
       74: 4067110998400948482
     second: Cube.004|PlaneAction
+  - first:
+      74: -2826738495833952270
+    second: Plane.002|CameraAction
   - first:
       74: -1842764531027752542
     second: Plane.002|Cube.001Action
@@ -202,11 +223,17 @@ ModelImporter:
       74: -1545476422316536872
     second: Plane.002|CylinderAction
   - first:
+      74: -8352079462465529362
+    second: Plane.002|LightAction
+  - first:
       74: -1177906569688301896
     second: Plane.002|Plane.002Action
   - first:
       74: 2392506347608420488
     second: Plane.002|PlaneAction
+  - first:
+      74: 3941111494565984658
+    second: Cube.006|CameraAction
   - first:
       74: -8888736090160704964
     second: Cube.006|Cube.001Action
@@ -253,11 +280,17 @@ ModelImporter:
       74: 2612419767064235294
     second: Cube.006|CylinderAction
   - first:
+      74: -2869643986917320813
+    second: Cube.006|LightAction
+  - first:
       74: 5072570087636347827
     second: Cube.006|Plane.002Action
   - first:
       74: 4770580019103683548
     second: Cube.006|PlaneAction
+  - first:
+      74: 1387586764412313177
+    second: Cube.007|CameraAction
   - first:
       74: 4715561972911317580
     second: Cube.007|Cube.001Action
@@ -304,11 +337,17 @@ ModelImporter:
       74: 1267755880449076219
     second: Cube.007|CylinderAction
   - first:
+      74: -3886170577001089096
+    second: Cube.007|LightAction
+  - first:
       74: -686178085744237869
     second: Cube.007|Plane.002Action
   - first:
       74: 989947787607597230
     second: Cube.007|PlaneAction
+  - first:
+      74: -5717193181988794679
+    second: Cube.008|CameraAction
   - first:
       74: -4831506327992622958
     second: Cube.008|Cube.001Action
@@ -355,11 +394,17 @@ ModelImporter:
       74: -7919052570527835853
     second: Cube.008|CylinderAction
   - first:
+      74: 339693182291583745
+    second: Cube.008|LightAction
+  - first:
       74: 6058281587196499984
     second: Cube.008|Plane.002Action
   - first:
       74: 3660681965654515558
     second: Cube.008|PlaneAction
+  - first:
+      74: -6774494355826849465
+    second: Cube.010|CameraAction
   - first:
       74: 443620969730799607
     second: Cube.010|Cube.001Action
@@ -406,11 +451,17 @@ ModelImporter:
       74: 2742404103003042134
     second: Cube.010|CylinderAction
   - first:
+      74: 8126601230758991264
+    second: Cube.010|LightAction
+  - first:
       74: -2538314836377092157
     second: Cube.010|Plane.002Action
   - first:
       74: -538469109380391751
     second: Cube.010|PlaneAction
+  - first:
+      74: 4078047951464203250
+    second: Cube.011|CameraAction
   - first:
       74: 9165568405754695362
     second: Cube.011|Cube.001Action
@@ -457,11 +508,17 @@ ModelImporter:
       74: -573928574750360171
     second: Cube.011|CylinderAction
   - first:
+      74: -2354168219608756518
+    second: Cube.011|LightAction
+  - first:
       74: -7510676345407448268
     second: Cube.011|Plane.002Action
   - first:
       74: -6299067236588061479
     second: Cube.011|PlaneAction
+  - first:
+      74: 8753795117116183676
+    second: Cube.012|CameraAction
   - first:
       74: -2328544213056023604
     second: Cube.012|Cube.001Action
@@ -508,11 +565,17 @@ ModelImporter:
       74: 8289058389420585833
     second: Cube.012|CylinderAction
   - first:
+      74: -1808057572947166624
+    second: Cube.012|LightAction
+  - first:
       74: -3690078354818283477
     second: Cube.012|Plane.002Action
   - first:
       74: -5998075777888813565
     second: Cube.012|PlaneAction
+  - first:
+      74: -1489832937513433573
+    second: Cube.001|CameraAction
   - first:
       74: -8515560403302317629
     second: Cube.001|Cube.001Action
@@ -559,11 +622,17 @@ ModelImporter:
       74: 8199798356239145933
     second: Cube.001|CylinderAction
   - first:
+      74: 7230306397454217088
+    second: Cube.001|LightAction
+  - first:
       74: 2471324388153504170
     second: Cube.001|Plane.002Action
   - first:
       74: -2152753641401502910
     second: Cube.001|PlaneAction
+  - first:
+      74: -5236165298891556921
+    second: Plane|CameraAction
   - first:
       74: -3851250310652265543
     second: Plane|Cube.001Action
@@ -610,11 +679,17 @@ ModelImporter:
       74: -8566936486729655462
     second: Plane|CylinderAction
   - first:
+      74: -3293050857519316632
+    second: Plane|LightAction
+  - first:
       74: -3201207233082399036
     second: Plane|Plane.002Action
   - first:
       74: -5187248419258813496
     second: Plane|PlaneAction
+  - first:
+      74: -2797570769209874791
+    second: Cube.005|CameraAction
   - first:
       74: 2927015479693793665
     second: Cube.005|Cube.001Action
@@ -661,11 +736,17 @@ ModelImporter:
       74: -7760758874470915902
     second: Cube.005|CylinderAction
   - first:
+      74: -8267463729389051851
+    second: Cube.005|LightAction
+  - first:
       74: -3589060030981658626
     second: Cube.005|Plane.002Action
   - first:
       74: -8487749432816782656
     second: Cube.005|PlaneAction
+  - first:
+      74: 9114332383783914255
+    second: Cube.002|CameraAction
   - first:
       74: 978295544477664516
     second: Cube.002|Cube.001Action
@@ -712,11 +793,17 @@ ModelImporter:
       74: -1041553994202895661
     second: Cube.002|CylinderAction
   - first:
+      74: 1770923218944990588
+    second: Cube.002|LightAction
+  - first:
       74: 5524368398208792222
     second: Cube.002|Plane.002Action
   - first:
       74: 2107512304573994466
     second: Cube.002|PlaneAction
+  - first:
+      74: 4677371705986153481
+    second: Cube|CameraAction
   - first:
       74: 9036694105013053538
     second: Cube|Cube.001Action
@@ -763,11 +850,17 @@ ModelImporter:
       74: -4438923420132555670
     second: Cube|CylinderAction
   - first:
+      74: -2756421584295256318
+    second: Cube|LightAction
+  - first:
       74: 3257011253889578423
     second: Cube|Plane.002Action
   - first:
       74: -6045865710964554881
     second: Cube|PlaneAction
+  - first:
+      74: 4051069942454032539
+    second: Cube.013|CameraAction
   - first:
       74: 4483438946222599153
     second: Cube.013|Cube.001Action
@@ -814,11 +907,17 @@ ModelImporter:
       74: -2171032438825516418
     second: Cube.013|CylinderAction
   - first:
+      74: -6947444570402510728
+    second: Cube.013|LightAction
+  - first:
       74: -925163279708285692
     second: Cube.013|Plane.002Action
   - first:
       74: 1170385137037115161
     second: Cube.013|PlaneAction
+  - first:
+      74: 305941690654072021
+    second: Cube.014|CameraAction
   - first:
       74: 4838236656993075586
     second: Cube.014|Cube.001Action
@@ -865,12 +964,115 @@ ModelImporter:
       74: -4170295297142023789
     second: Cube.014|CylinderAction
   - first:
+      74: -1550971278928395802
+    second: Cube.014|LightAction
+  - first:
       74: 1583838088446570861
     second: Cube.014|Plane.002Action
   - first:
       74: -199069656442890017
     second: Cube.014|PlaneAction
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: d04a33353470852499d04f5401180d39, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.002
+    second: {fileID: 2100000, guid: 1d9ab24bcbfb7464ebaa168d5092863f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.004
+    second: {fileID: 2100000, guid: 1d9ab24bcbfb7464ebaa168d5092863f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.005
+    second: {fileID: 2100000, guid: 1d9ab24bcbfb7464ebaa168d5092863f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.006
+    second: {fileID: 2100000, guid: 1d9ab24bcbfb7464ebaa168d5092863f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.007
+    second: {fileID: 2100000, guid: 1d9ab24bcbfb7464ebaa168d5092863f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.008
+    second: {fileID: 2100000, guid: 1d9ab24bcbfb7464ebaa168d5092863f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.009
+    second: {fileID: 2100000, guid: 1d9ab24bcbfb7464ebaa168d5092863f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.010
+    second: {fileID: 2100000, guid: 1d9ab24bcbfb7464ebaa168d5092863f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.011
+    second: {fileID: 2100000, guid: 1d9ab24bcbfb7464ebaa168d5092863f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.012
+    second: {fileID: 2100000, guid: 1d9ab24bcbfb7464ebaa168d5092863f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.013
+    second: {fileID: 2100000, guid: 1d9ab24bcbfb7464ebaa168d5092863f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.014
+    second: {fileID: 2100000, guid: 1d9ab24bcbfb7464ebaa168d5092863f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.015
+    second: {fileID: 2100000, guid: 1d9ab24bcbfb7464ebaa168d5092863f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.016
+    second: {fileID: 2100000, guid: 1d9ab24bcbfb7464ebaa168d5092863f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.017
+    second: {fileID: 2100000, guid: 1d9ab24bcbfb7464ebaa168d5092863f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.018
+    second: {fileID: 2100000, guid: 1d9ab24bcbfb7464ebaa168d5092863f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.019
+    second: {fileID: 2100000, guid: 1d9ab24bcbfb7464ebaa168d5092863f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.020
+    second: {fileID: 2100000, guid: 1d9ab24bcbfb7464ebaa168d5092863f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.022
+    second: {fileID: 2100000, guid: 1d9ab24bcbfb7464ebaa168d5092863f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
