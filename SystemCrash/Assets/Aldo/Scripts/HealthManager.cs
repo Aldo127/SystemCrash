@@ -11,7 +11,7 @@ public class HealthManager : MonoBehaviour
     [SerializeField] GameObject fireVFX;
 
     //color stuff
-    MeshRenderer meshRenderer;
+   // MeshRenderer meshRenderer;
     Color origColor;
     float flashTime = .15f;
 
@@ -37,8 +37,8 @@ public class HealthManager : MonoBehaviour
 
     private void Start()
     {
-        meshRenderer = GetComponent<MeshRenderer>();
-        origColor = meshRenderer.material.color;
+      //  meshRenderer = GetComponent<MeshRenderer>();
+      //  origColor = meshRenderer.material.color;
     }
 
     public void Update()
@@ -54,13 +54,13 @@ public class HealthManager : MonoBehaviour
 
     void FlashStart()
     {
-        meshRenderer.material.color = Color.red;
+      //  meshRenderer.material.color = Color.red;
         Invoke("FlashStop", flashTime);
     }
 
     void FlashStop()
     {
-        meshRenderer.material.color = origColor;
+        //meshRenderer.material.color = origColor;
     }
 
     void DropXP()
