@@ -16,7 +16,7 @@ MonoBehaviour:
   maxHealth: 2
   bitValue: 9
   damage: 15
-  speed: 9
+  speed: 8
   attackType: ranged
   projectilePrefab: {fileID: 7965688671166624015, guid: 48685b0acaec4bd43adef5f3c221e585, type: 3}
   attackCooldown: 200

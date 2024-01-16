@@ -19,4 +19,5 @@ public class EnemyType : ScriptableObject
     public bool canThrowAllies;
     public bool usesGravity = true;
     public bool weak;
+    //public bool stareAtPlayer;
 }

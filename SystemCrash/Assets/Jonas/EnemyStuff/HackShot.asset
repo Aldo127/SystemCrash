@@ -16,7 +16,7 @@ MonoBehaviour:
   maxHealth: 1
   bitValue: 0
   damage: 15
-  speed: 20
+  speed: 19
   attackType: break
   projectilePrefab: {fileID: 0}
   attackCooldown: 10

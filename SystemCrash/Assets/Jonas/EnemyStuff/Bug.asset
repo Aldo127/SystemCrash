@@ -16,10 +16,12 @@ MonoBehaviour:
   maxHealth: 5
   bitValue: 6
   damage: 8
-  speed: 10
+  speed: 9
   attackType: melee
   projectilePrefab: {fileID: 0}
   attackCooldown: 15
   lifetime: -1
   throwable: 1
   canThrowAllies: 0
+  usesGravity: 1
+  weak: 0
