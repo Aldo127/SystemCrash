@@ -23,5 +23,5 @@ MonoBehaviour:
   lifetime: -1
   throwable: 0
   canThrowAllies: 0
-  usesGravity: 0
+  usesGravity: 1
   weak: 1

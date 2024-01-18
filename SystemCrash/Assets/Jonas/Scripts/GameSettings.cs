@@ -9,6 +9,7 @@ public class GameSettings : ScriptableObject
 
     public int pointGoal = 300;
     public int timeLimit = -1;
+    public float collectRange = 25f;
 
     public float enemySpawnDistance = 70;
 

@@ -29,7 +29,7 @@ public class BitScript : MonoBehaviour
             player.GetComponent<PlayerStats>().Damage(-1);
             Destroy(gameObject);
         }
-        else if (distanceFromPoint <= 20)
+        else if (distanceFromPoint <= gameSettings.collectRange)
         {
             transform.LookAt(player.transform.position);
             moveDirection = transform.forward;

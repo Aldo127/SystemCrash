@@ -22,7 +22,7 @@ public class EnemyAI : MonoBehaviour
     Rigidbody rb;
 
     private int health;
-    private int age = 0;
+    private float age = 0;
     private int attackCooldown;
     [SerializeField] private GameSettings gameSettings;
 
@@ -103,12 +103,15 @@ public class EnemyAI : MonoBehaviour
         }
         else if (MovementType == "flyCircle")
         {
-            float a = 30;
-            float b = 30;
-            float c = 30;
+            float a = 9;
+            float b = 3;
+            float c = 6;
+            //Vector3 destination = new Vector3(
+            //    (a + b) * Mathf.Cos(age / 64) - c * Mathf.Cos((a / b + age / 64) * age / 64), 6,
+            //    (a + b) * Mathf.Sin(age / 64) - c * Mathf.Sin((a / b + age / 64) * age / 64));
             Vector3 destination = new Vector3(
-                (a + b) * Mathf.Cos(age * 2) - c * Mathf.Cos((a / b + age * 2) * age * 2), 6,
-                (a + b) * Mathf.Sin(age * 2) - c * Mathf.Sin((a / b + age * 2) * age * 2));
+                (a + b) * Mathf.Cos(age / 64) - c * Mathf.Cos(((a + b) / b) * age / 64), 6,
+                (a + b) * Mathf.Sin(age / 64) - c * Mathf.Sin(((a + b) / b) * age / 64));
             orientation.transform.LookAt(destination + target.transform.position);
         }
         else if (MovementType == "forward")

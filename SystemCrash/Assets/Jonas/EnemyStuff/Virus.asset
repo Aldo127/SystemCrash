@@ -16,7 +16,7 @@ MonoBehaviour:
   maxHealth: 20
   bitValue: 12
   damage: 17
-  speed: 7
+  speed: 5
   attackType: melee
   projectilePrefab: {fileID: 0}
   attackCooldown: 20
