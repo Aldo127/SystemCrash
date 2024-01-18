@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Jonas/WinScreen.unity
     guid: 41dd07da7b80ddd4c8aa6c0924415cef
+  - enabled: 1
+    path: Assets/Aldo/CreditScene.unity
+    guid: 6bd3614ea8d4d6542a938cc0a262d572
   m_configObjects: {}
