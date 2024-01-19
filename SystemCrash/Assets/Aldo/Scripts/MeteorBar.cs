@@ -14,6 +14,10 @@ public class MeteorBar : MonoBehaviour
             barImage = transform.Find("bar").GetComponent<Image>();
 
             timeee = new Timeee();
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+         //   Timeee.TrySpendMana(30);
+        }
     }
 
     private void Update()
@@ -37,6 +41,7 @@ public class MeteorBar : MonoBehaviour
         public void Update()
         {
             timeAmount += timeRegenAmount * Time.deltaTime;
+            timeAmount = Mathf.Clamp(timeAmount, 0f, MANA_MAX);
         }
          public void TrySpendMana(int amount)
         {

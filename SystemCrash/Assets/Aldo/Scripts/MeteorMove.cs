@@ -11,6 +11,8 @@ public class MeteorMove : MonoBehaviour
 
     private Rigidbody rb;
 
+    private EnemyAI enemyAI;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -54,5 +56,6 @@ public class MeteorMove : MonoBehaviour
         Destroy(gameObject);
 
         //insert kill all enemy code here:
+        enemyAI.Damage(100);
     }
 }

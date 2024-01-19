@@ -7,22 +7,41 @@ public class SpawnMeteor : MonoBehaviour
     public GameObject vfx;
     public Transform startPoint;
     public Transform endPoint;
+    public GameObject Image;
+
+    [SerializeField] private Cooldown cooldown;
 
      public void MeteorTest()
     {
+        if (cooldown.IsCoolingDown) return;
+
         var startPos = startPoint.position;
         GameObject objVFX = Instantiate(vfx, startPos, Quaternion.identity) as GameObject;
 
         var endPos = endPoint.position;
 
         RotateTo(objVFX, endPos);
+
+        cooldown.StartCooldown();
     }
 
     private void Update()
     {
+
+        if (cooldown.IsCoolingDown )
+        {
+            Image.SetActive(false);
+        }
+        else
+        {
+            Image.SetActive(true);
+        }
+
         if (Input.GetKeyDown(KeyCode.Q))
         {
             MeteorTest();
+
+            cooldown.StartCooldown();
         }
     }
 

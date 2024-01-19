@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 908437342214558191}
   - component: {fileID: 908437342214558190}
   - component: {fileID: 9189140521068285362}
+  - component: {fileID: 7309865226470395905}
   - component: {fileID: 5341468455229247171}
   - component: {fileID: 6253673580374945855}
   m_Layer: 0
@@ -97,7 +98,27 @@ MonoBehaviour:
   gameOverScreen: {fileID: 0}
   pointCounter: {fileID: 0}
   healthCounter: {fileID: 0}
+  pointGoal: {fileID: 0}
+  gameOverMessage: {fileID: 0}
   gameSettings: {fileID: 11400000, guid: cb57e58fd966eb04b9b682478092bf3d, type: 2}
+--- !u!114 &7309865226470395905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 908437342214558177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acd1b47598f5bab41ac9e81e6b74f025, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vfx: {fileID: 0}
+  startPoint: {fileID: 0}
+  endPoint: {fileID: 0}
+  Image: {fileID: 0}
+  cooldown:
+    cooldownTime: 10
 --- !u!198 &5341468455229247171
 ParticleSystem:
   m_ObjectHideFlags: 0
