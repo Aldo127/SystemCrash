@@ -5,8 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class SwitchScene : MonoBehaviour
 {
+    public GameSettings gameSettings;
     public void StartGame()
     {
+        if (Input.GetKey(KeyCode.LeftShift)) gameSettings.endless = true;
+        else gameSettings.endless = false;
         SceneManager.LoadScene("SceneyScene");
     }
     public void ReturnToMenu()

@@ -29,12 +29,13 @@ public class PlayerStats : MonoBehaviour
     {
         healthCounter.GetComponent<Text>().text = "Health: " + health;
         pointCounter.GetComponent<Text>().text = "Score: " + points;
-        pointGoal.GetComponent<Text>().text = "Goal: " + gameSettings.pointGoal + " before time over!";
+        if (gameSettings.endless) pointGoal.GetComponent<Text>().text = "Goal: " + gameSettings.pointBest + " without crashing!";
+        else pointGoal.GetComponent<Text>().text = "Goal: " + gameSettings.pointGoal + " before time over!";
         if (health > maxHealth) health -= 1;
         if (gameSettings.playerAlive == true)
         {
             gameOverScreen.SetActive(false);
-            if (gameSettings.gameIsActive && gameSettings.pointGoal > 0 && points >= gameSettings.pointGoal)
+            if (gameSettings.gameIsActive && !gameSettings.endless && gameSettings.pointGoal > 0 && points >= gameSettings.pointGoal)
             {
                 SceneManager.LoadScene("WinScreen");
                 gameSettings.gameIsActive = false;
@@ -60,6 +61,7 @@ public class PlayerStats : MonoBehaviour
         gameOverScreen.SetActive(true);
         gameOverMessage.SetActive(true);
         gameSettings.playerAlive = false;
+        if (gameSettings.pointBest < points) gameSettings.pointBest = points;
         Debug.Log("Game Over!");
         //Debug.Log("Final Score: " + points);
     }

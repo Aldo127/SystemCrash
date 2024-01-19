@@ -40,7 +40,7 @@ public class PlayerCamera : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (gameSettings.gameIsActive &&  gameSettings.playerAlive)
+        if (gameSettings.gameIsActive && gameSettings.playerAlive)
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;

@@ -16,7 +16,7 @@ public class EnemySpawner : MonoBehaviour
     public GameObject timeCounter;
     private bool startTimer = false;
     public int spawnRange;
-    private int restartDelay = 10;
+    private int restartDelay = 15;
     public GameObject continueMessage;
     // Start is called before the first frame update
     void Start()
@@ -34,6 +34,8 @@ public class EnemySpawner : MonoBehaviour
         cooldown = -100;
         gameSettings.gameIsActive = true;
         startTimer = false;
+        if (gameSettings.endless) timeCounter.SetActive(false);
+        else timeCounter.SetActive(true);
     }
 
     // Update is called once per frame
@@ -49,7 +51,7 @@ public class EnemySpawner : MonoBehaviour
         if (startTimer && gameSettings.playerAlive && gameSettings.gameIsActive)
         {
             cooldown += 1;
-            time -= 1;
+            if (!gameSettings.endless)  time -= 1;
             reminder.SetActive(false);
         }
         if (time % 50 == 0) timeCounter.GetComponent<Text>().text = "Time: " + time / 50;
