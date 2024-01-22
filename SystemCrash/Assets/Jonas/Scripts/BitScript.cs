@@ -26,7 +26,7 @@ public class BitScript : MonoBehaviour
         if (distanceFromPoint <= 3)
         {
             player.GetComponent<PlayerStats>().points += 1;
-            player.GetComponent<PlayerStats>().Damage(-1);
+            player.GetComponent<PlayerStats>().Damage(gameSettings.pointHealthAmount * -1);
             Destroy(gameObject);
         }
         else if (distanceFromPoint <= gameSettings.collectRange)

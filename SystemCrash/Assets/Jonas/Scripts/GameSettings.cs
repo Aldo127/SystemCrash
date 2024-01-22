@@ -21,6 +21,7 @@ public class GameSettings : ScriptableObject
     public float mSensitivityY;
     public bool endless = false;
     public int pointBest = 0;
+    public int pointHealthAmount = 1;
 
     [Header("Do Not Touch")]
     public GameObject bitPrefab;

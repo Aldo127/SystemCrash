@@ -16,14 +16,15 @@ MonoBehaviour:
   pointGoal: 300
   timeLimit: 180
   collectRange: 25
-  enemySpawnDistance: 200
+  enemySpawnDistance: 250
   enemySpeedMultiplier: 1
   godMode: 0
-  mSensitivityX: 100
-  mSensitivityY: 100
+  mSensitivityX: 105
+  mSensitivityY: 105
   endless: 1
   pointBest: 0
+  pointHealthAmount: 2
   bitPrefab: {fileID: 5570520671071246356, guid: 8a47c37da73a9a945a5590fabd98f93b, type: 3}
-  playerAlive: 0
+  playerAlive: 1
   gameIsActive: 1
   gamePaused: 0

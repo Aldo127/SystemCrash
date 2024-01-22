@@ -17,6 +17,8 @@ public class EnemySpawner : MonoBehaviour
     private bool startTimer = false;
     public int spawnRange;
     private int restartDelay = 15;
+
+    public AudioSource gameSong;
     public GameObject continueMessage;
     // Start is called before the first frame update
     void Start()
@@ -41,7 +43,11 @@ public class EnemySpawner : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0)) startTimer = true;
+        if (Input.GetKeyDown(KeyCode.Mouse0) && !startTimer) 
+        { 
+            startTimer = true;
+            gameSong.Play();
+        }
         if (restartDelay <= 0 && Input.GetKeyDown(KeyCode.Mouse0)) SceneManager.LoadScene("SceneyScene");
     }
     void FixedUpdate()
@@ -72,5 +78,6 @@ public class EnemySpawner : MonoBehaviour
                 cooldown = 0;
             }
         }
+        if (!gameSettings.playerAlive || !gameSettings.gameIsActive) gameSong.Stop();
     }
 }
