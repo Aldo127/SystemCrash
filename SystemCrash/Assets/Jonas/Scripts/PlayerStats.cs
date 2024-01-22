@@ -14,7 +14,6 @@ public class PlayerStats : MonoBehaviour
     public GameObject healthCounter;
     public GameObject pointGoal;
     public GameObject gameOverMessage;
-    public AudioSource gameSong;
     public GameSettings gameSettings;
     
     // Start is called before the first frame update
