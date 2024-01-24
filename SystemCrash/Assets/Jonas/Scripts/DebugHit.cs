@@ -7,6 +7,7 @@ public class DebugHit : MonoBehaviour
     [SerializeField] private float objectDistance;
     [SerializeField] private Collider objectCollider;
     public GameSettings gameSettings;
+    public GameObject effect;
 
     void Update()
     {
@@ -17,6 +18,9 @@ public class DebugHit : MonoBehaviour
             {
                 objectDistance = hit.distance;
                 objectCollider = hit.collider;
+                GameObject newEffect = Instantiate(effect, hit.point, transform.rotation);
+                newEffect.SetActive(true);
+                Destroy(newEffect, 1f);
                 EnemyAI isEnemy = hit.transform.GetComponentInParent<EnemyAI>();
                 if (isEnemy) isEnemy.Damage(5);
             }

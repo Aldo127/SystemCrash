@@ -37,6 +37,8 @@ public class PlayerStats : MonoBehaviour
             gameOverScreen.SetActive(false);
             if (gameSettings.gameIsActive && !gameSettings.endless && gameSettings.pointGoal > 0 && points >= gameSettings.pointGoal)
             {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
                 SceneManager.LoadScene("WinScreen");
                 gameSettings.gameIsActive = false;
             }

@@ -19,7 +19,7 @@ MonoBehaviour:
   speed: 8
   attackType: ranged
   projectilePrefab: {fileID: 7965688671166624015, guid: 48685b0acaec4bd43adef5f3c221e585, type: 3}
-  attackCooldown: 200
+  attackCooldown: 220
   lifetime: -1
   throwable: 0
   canThrowAllies: 0

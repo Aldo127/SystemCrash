@@ -19,7 +19,7 @@ MonoBehaviour:
   speed: 8
   attackType: melee
   projectilePrefab: {fileID: 0}
-  attackCooldown: 15
+  attackCooldown: 25
   lifetime: -1
   throwable: 1
   canThrowAllies: 0

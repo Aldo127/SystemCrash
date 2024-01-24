@@ -36828,6 +36828,7 @@ MonoBehaviour:
   objectDistance: 0
   objectCollider: {fileID: 0}
   gameSettings: {fileID: 11400000, guid: cb57e58fd966eb04b9b682478092bf3d, type: 2}
+  effect: {fileID: 6748317203449462835, guid: a40cdcb18009b9e4a9a24fac7f7d64e3, type: 3}
 --- !u!45 &1796952140
 Skybox:
   m_ObjectHideFlags: 0
@@ -37436,7 +37437,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: -Grab blue particles before they disappear to score points!!!-
+  m_Text: -Grab blue particles to heal and score points!!!-
 --- !u!222 &1849837316
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -41296,6 +41297,67 @@ PrefabInstance:
       objectReference: {fileID: 1314448380}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4bd09177a5fe894bae5547af868dceb, type: 3}
+--- !u!1001 &6748317204805383683
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6748317203449462832, guid: a40cdcb18009b9e4a9a24fac7f7d64e3, type: 3}
+      propertyPath: m_RootOrder
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 6748317203449462832, guid: a40cdcb18009b9e4a9a24fac7f7d64e3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6748317203449462832, guid: a40cdcb18009b9e4a9a24fac7f7d64e3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6748317203449462832, guid: a40cdcb18009b9e4a9a24fac7f7d64e3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6748317203449462832, guid: a40cdcb18009b9e4a9a24fac7f7d64e3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6748317203449462832, guid: a40cdcb18009b9e4a9a24fac7f7d64e3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6748317203449462832, guid: a40cdcb18009b9e4a9a24fac7f7d64e3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6748317203449462832, guid: a40cdcb18009b9e4a9a24fac7f7d64e3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6748317203449462832, guid: a40cdcb18009b9e4a9a24fac7f7d64e3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6748317203449462832, guid: a40cdcb18009b9e4a9a24fac7f7d64e3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6748317203449462832, guid: a40cdcb18009b9e4a9a24fac7f7d64e3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6748317203449462835, guid: a40cdcb18009b9e4a9a24fac7f7d64e3, type: 3}
+      propertyPath: m_Name
+      value: Effect
+      objectReference: {fileID: 0}
+    - target: {fileID: 6748317203449462835, guid: a40cdcb18009b9e4a9a24fac7f7d64e3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a40cdcb18009b9e4a9a24fac7f7d64e3, type: 3}
 --- !u!1 &7575364994398774328
 GameObject:
   m_ObjectHideFlags: 0
