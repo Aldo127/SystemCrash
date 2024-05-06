@@ -2,20 +2,24 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Shader Graphs_Meteor 1
   m_Shader: {fileID: -6465566751694194690, guid: b0d98eee0bcaa0d4f891d8d9878410c6, type: 3}
-  m_ShaderKeywords: 
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -35,6 +39,7 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - Vector1_761100f679b84db0b0e85c5432b21430: 0
     - Vector1_77ba23bb418f45b2b9026163e94398cb: 0
@@ -44,6 +49,8 @@ Material:
     - Vector1_b1cfe472338747d588ea94f2a55383fb: 1
     - Vector1_c5cb955c47114f5c8a1a8566f03655d0: 20
     - Vector1_d9738ba858284c23b1b7d82cb099be68: 5
+    - _QueueControl: 0
+    - _QueueOffset: 0
     m_Colors:
     - Color_1b833ffa24144dc69244d10253faa5ef: {r: 0, g: 0, b: 0, a: 0}
     - Color_4f3aab1e7d3d4a54814c1a724d1a1fc5: {r: 5.992157, g: 1.2235295, b: 0.627451, a: 0}
@@ -51,3 +58,16 @@ Material:
     - Vector2_0837bb5e2beb47e8804140c8746f1926: {r: 0.1, g: 0, b: 0, a: 0}
     - Vector2_0f8762e503be47af9cf4b8cfae2a35d7: {r: -0.1, g: 0.1, b: 0, a: 0}
   m_BuildTextureStacks: []
+--- !u!114 &5483521988376716701
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 6
